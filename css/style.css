@@ -1,22 +1,30 @@
 /* Global styles */
-*{
+* {
   scroll-behavior: smooth;
 }
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  line-height: 1.6;
+  background: #f8f9fa;
+  color: #343a40;
 }
 
-/* Header styles */
+h1, h2, p {
+  margin: 0;
+  padding: 0;
+}
+
 header {
-  background-color: #333;
+  background-color: #007bff;
   color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 20px 40px;
   width: 100%;
   position: fixed;
   top: 0;
@@ -26,69 +34,80 @@ header {
 
 header h1 {
   margin: 0;
+  font-size: 24px;
 }
 
-header nav ul {
+nav {
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+}
+
+nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
 }
 
-nav {
-  margin-right: 20px;
-}
-
-header nav ul li {
+nav ul li {
   margin: 0 10px;
 }
 
-header nav ul li a {
+nav ul li a {
   color: #fff;
   text-decoration: none;
   font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background 0.3s;
 }
 
-header nav ul li a:hover {
-  text-decoration: underline;
-}
-
-/* Main section styles */
-section {
-  padding-top: 80px; /* Menambah padding untuk mengkompensasi header tetap */
+nav ul li a:hover {
+  background: #0056b3;
 }
 
 main {
-  display: flex;
-  flex-wrap: wrap;
+  margin-top: 100px;
+  padding-top: 100px; /* Menambah padding untuk mengkompensasi header tetap */
+  padding: 20px 40px;
+}
+
+section {
+  padding: 20px 0;
+}
+
+article, aside {
   padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  margin-bottom: 20px;
 }
 
 article {
   flex: 3;
-  padding: 20px;
-  background-color: #f4f4f4;
-  margin: 10px;
-  border-radius: 8px;
+  margin-right: 20px;
 }
 
 aside {
   flex: 1;
-  padding: 20px;
-  background-color: #e2e2e2;
-  margin: 10px;
-  border-radius: 8px;
 }
 
 aside img {
   max-width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
-/* Footer styles */
+.makanan-khas{
+  display: flex;
+  flex-direction: row;
+
+}
+
 footer {
-  background-color: #333;
+  background-color: #007bff;
   color: #fff;
   text-align: center;
   padding: 20px;
@@ -97,24 +116,33 @@ footer {
   width: 100%;
 }
 
-/* Responsive styles */
 @media (max-width: 768px) {
+  header {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 10px;
+  }
+
+  nav ul {
+      flex-direction: column;
+      width: 100%;
+  }
+
+  nav ul li {
+      margin: 5px 0;
+  }
+
   main {
-    flex-direction: column;
+      padding: 20px;
+      padding-top: 120px;
   }
 
-  article,
-  aside {
-    margin-right: 0;
-    flex: 1 100%;
-  }
-
-  header nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  header nav ul li {
-    margin: 5px 0;
+  article, aside {
+      margin-right: 0;
+      flex: 1 100%;
   }
 }
